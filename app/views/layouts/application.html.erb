@@ -70,9 +70,9 @@
             <h3>Sidebar</h3>
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Hide drafts" %></li>
               #TODO доделать кнопку
-              <li><%= link_to "Show drafts", books_path(:show_drafts), :method => :put  %></li>
+              <li><%= link_to "Hide drafts" %></li>
+              <li><%= link_to "Show drafts"  %></li>
               <li><%= link_to "Log Out", destroy_user_session_path,  :method => :delete  %></li>
             </ul>
           </div><!--/.well -->

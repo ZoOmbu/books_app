@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427061330) do
+ActiveRecord::Schema.define(version: 20160427070051) do
+
+  create_table "associatives", force: :cascade do |t|
+    t.integer  "books_id",          limit: 4
+    t.integer  "genres_id",         limit: 4
+    t.datetime "associatives_date"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "associatives", ["books_id"], name: "index_associatives_on_books_id", using: :btree
+  add_index "associatives", ["genres_id"], name: "index_associatives_on_genres_id", using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "title",                  limit: 255

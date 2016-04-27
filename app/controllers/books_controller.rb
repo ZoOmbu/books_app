@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   end
 
   def show_drafts
-    @books = Book.where(drafts: true)
+    @books = Book.where('created_at >= ?', params[:query], 1.week.ago, drafts: false )
     respond_to do |format|
       format.html
       format.js
@@ -78,6 +78,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :image_url, :description, :genre, :author, :draft,)
+      params.require(:book).permit(:title, :image_url, :description, :genre, :author, :draft)
     end
 end
