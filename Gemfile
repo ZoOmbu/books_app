@@ -20,6 +20,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise', '~> 4.0'
 gem 'paperclip'
 gem 'rails_12factor', group: :production
+gem 'puma'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
