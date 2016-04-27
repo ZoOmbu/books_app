@@ -7,6 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:user) %></th>
       <th><%= model_class.human_attribute_name(:image_url) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:genre) %></th>
@@ -21,7 +22,8 @@
       <tr>
         <td><%= link_to book.id, book_path(book) %></td>
         <td><%= book.title %></td>
-        <td><%= book.image_url %></td>
+        <td><%= book.user.email %></td>
+        <td><%= image_tag book.image_url.url(:thumb) %></td>
         <td><%= book.description %></td>
         <td><%= book.genre %></td>
         <td><%= book.author %></td>
